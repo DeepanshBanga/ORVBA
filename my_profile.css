@@ -1,0 +1,139 @@
+/* Reset & General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Header Navigation */
+header {
+    background: #007bff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo and nav */
+    width: 100%;
+    position: fixed; /* Fix it at the top */
+    top: 0;
+    left: 0;
+    height: 60px;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Navigation Bar */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: background 0.3s;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    background: #0056b3;
+}
+
+/* Adjust Main Content */
+.profile-container {
+    margin-top: 80px; /* Push content below fixed header */
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Profile Info Box */
+.profile-info {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: left;
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.profile-info p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* Section Headings */
+h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    background: transparent;  /* Remove white background */
+    padding: 10px;
+    margin: 5px auto;
+    border-radius: 5px;
+    box-shadow: none;  /* Remove shadow */
+    max-width: 500px;
+}
+
+/* Buttons */
+.btn {
+    background: #ff5722;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: auto;
+}
+
+.btn:hover {
+    background: #e64a19;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}

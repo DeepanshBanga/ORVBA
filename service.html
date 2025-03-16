@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Products - ORVBA</title>
+    <link rel="stylesheet" href="shop_products.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">ORVBA</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="find_mechanic.html">Find Mechanic</a></li>
+                <li><a href="shop_products.html">Shop Products</a></li>
+                <li><a href="request_service.html">Request Service</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="my_profile.html">My Profile</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Product Listing Section -->
+    <section class="product-container">
+        <h2>Shop Car Repair Tools & Accessories</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="battery.jpeg" alt="Car Battery">
+                <h3>Car Battery</h3>
+                <p>High-performance battery for all vehicle types.</p>
+                <span>$120</span>
+                <button class="btn add-to-cart" data-name="Car Battery" data-price="120">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="tire.jpeg" alt="Car Tire">
+                <h3>Car Tire</h3>
+                <p>Durable tires for all terrains.</p>
+                <span>$80</span>
+                <button class="btn add-to-cart" data-name="Car Tire" data-price="80">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="oil.jpeg" alt="Engine Oil">
+                <h3>Engine Oil</h3>
+                <p>Premium synthetic engine oil for smooth performance.</p>
+                <span>$35</span>
+                <button class="btn add-to-cart" data-name="Engine Oil" data-price="35">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart-container">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-list"></ul>
+        <p>Total: $<span id="cart-total">0</span></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 ORVBA. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Cart Functionality -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cartList = document.getElementById("cart-list");
+            const cartTotal = document.getElementById("cart-total");
+            let total = 0;
+
+            document.querySelectorAll(".add-to-cart").forEach(button => {
+                button.addEventListener("click", () => {
+                    const name = button.getAttribute("data-name");
+                    const price = parseFloat(button.getAttribute("data-price"));
+                    total += price;
+
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${name} - $${price}`;
+                    cartList.appendChild(listItem);
+
+                    cartTotal.textContent = total.toFixed(2);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

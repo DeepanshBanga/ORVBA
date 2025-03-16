@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Service - ORVBA</title>
+    <link rel="stylesheet" href="request_service.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">ORVBA</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="find_mechanic.html">Find Mechanic</a></li>
+                <li><a href="shop_products.html">Shop Products</a></li>
+                <li><a href="request_service.html">Request Service</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="my_profile.html">My Profile</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Service Request Section -->
+    <section class="service-container">
+        <h2>Request Roadside Assistance</h2>
+        <form class="service-form" id="serviceForm">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="fullName" placeholder="Full Name" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" id="location" placeholder="Location" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-tools"></i>
+                <select id="serviceType" required>
+                    <option value="">Select Service Needed</option>
+                    <option value="battery">Battery Jumpstart</option>
+                    <option value="tire">Flat Tire Change</option>
+                    <option value="fuel">Fuel Delivery</option>
+                    <option value="repair">Vehicle Repair</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Request Service</button>
+        </form>
+
+        <!-- Confirmation Message -->
+        <p id="confirmationMessage" style="display: none; color: green; font-weight: bold;"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 ORVBA. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById("serviceForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from reloading the page
+            
+            // Get input values
+            let fullName = document.getElementById("fullName").value.trim();
+            let phoneNumber = document.getElementById("phoneNumber").value.trim();
+            let location = document.getElementById("location").value.trim();
+            let serviceType = document.getElementById("serviceType").value;
+
+            // Validate input
+            if (fullName === "" || phoneNumber === "" || location === "" || serviceType === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            // Show confirmation message
+            document.getElementById("confirmationMessage").innerText = 
+                "Thank you, " + fullName + "! Your " + serviceType + " request has been received.";
+            document.getElementById("confirmationMessage").style.display = "block";
+
+            // Clear form fields
+            document.getElementById("serviceForm").reset();
+        });
+    </script>
+
+</body>
+</html>

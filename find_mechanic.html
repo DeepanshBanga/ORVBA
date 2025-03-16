@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Mechanic - ORVBA</title>
+    <link rel="stylesheet" href="find_mechanic.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">ORVBA</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop_products.html">Shop Products</a></li>
+                <li><a href="request_service.html">Request Service</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="my_profile.html">My Profile</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mechanic Search Section -->
+    <section class="search-container">
+        <h2>Find a Mechanic Near You</h2>
+        <div class="search-box">
+            <input type="text" placeholder="Enter your location...">
+            <button class="btn"><i class="fas fa-search"></i> Search</button>
+        </div>
+    </section>
+
+    <!-- Mechanic Listings -->
+    <section class="mechanic-list">
+        <h2>Available Mechanics</h2>
+        <div class="mechanic-card">
+            <h3>Mohan Kumar</h3>
+            <p>Expertise: Battery Jumpstart, Engine Repair</p>
+            <p>Location: Chandigarh</p>
+            <button class="btn" onclick="showContact('Mohan Kumar', '9876543210', 'mohan@email.com')">Contact</button>
+        </div>
+        <div class="mechanic-card">
+            <h3>Kaku Singh</h3>
+            <p>Expertise: Tire Replacement, Fuel Delivery</p>
+            <p>Location: Mohali</p>
+            <button class="btn" onclick="showContact('Kaku Singh', '9123456789', 'kaku@email.com')">Contact</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 ORVBA. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript to Show Alert -->
+    <script>
+        function showContact(name, phone, email) {
+            alert("Mechanic: " + name + "\nPhone: " + phone + "\nEmail: " + email);
+        }
+    </script>
+
+</body>
+</html>
