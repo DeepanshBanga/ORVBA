@@ -18,22 +18,26 @@
 
   gtag('config', 'G-WND51QQ8RL');
 </script>
-    <script type="module">
+<script type="module">
   import { auth } from './firebase-config.js';
   import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
 
-  document.getElementById('register-btn').addEventListener('click', async () => {
+  document.getElementById('registerForm').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent default form submit
+
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      alert("Registration successful");
+      alert("Registration successful!");
+      window.location.href = "index.html";
     } catch (error) {
       alert("Registration failed: " + error.message);
     }
   });
 </script>
+
 
 <body>
     
@@ -89,7 +93,8 @@
                     <p>As a seller, you can <a href="edit_products.html">Manage Your Products</a></p>
                 </div>
 
-                <button type="submit" class="btn">Register</button>
+               <button type="submit" class="btn" id="register-btn">Register</button>
+
                 <p>Already have an account? <a href="login.html">Login</a></p>
             </form>
         </div>
