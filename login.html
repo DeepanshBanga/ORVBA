@@ -18,6 +18,24 @@
 
   gtag('config', 'G-WND51QQ8RL');
 </script>
+    <script type="module">
+  import { auth } from './firebase-config.js';
+  import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+
+  document.getElementById('login-btn').addEventListener('click', async () => {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      alert("Login successful");
+      // redirect or show user dashboard
+    } catch (error) {
+      alert("Login failed: " + error.message);
+    }
+  });
+</script>
+
 <body>
     
     <!-- Navigation Bar -->
